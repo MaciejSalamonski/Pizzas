@@ -7,11 +7,11 @@ on:
       - Pizzas
 
 jobs:
-  Pizzas-ut:
-    runs-on: ubuntu-latest
+  ctest:
+    runs-on: ubuntu-20.04
     steps:
     - name: Check out code
-      uses: actions/checkout@master
+      uses: actions/checkout@Pizzas
     - name: mkdir build
       run: mkdir build
     - name: Compile
@@ -21,4 +21,4 @@ jobs:
         make
     - name: Run tests
       working-directory: build
-      run: ctest -V
+      run: ./Pizzas-ut
